@@ -1,0 +1,25 @@
+pipeline {
+	agent any
+	stages {
+		stage ('initilaze modules') {
+      steps {
+			sh 'terraform init'
+    }
+		}
+		stage ('terraform checking all modules') {
+      steps {
+			sh 'terraform get'
+    }
+		}
+		stage ('terraform planning infra') {
+      steps {
+			sh 'terraform plan'
+    }
+		}
+		stage ('terraform applying changes to infra') {
+      steps {
+			sh 'terraform apply -input=false -auto-approve'
+    }
+		}
+	}
+}
