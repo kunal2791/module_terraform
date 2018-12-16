@@ -1,5 +1,5 @@
 resource "aws_iam_instance_profile" "jumpfordemo" {
-  name  = "jump"
+  name  = "${var.env}_jump"
   role = "${aws_iam_role.jumpfordemo.name}"
 }
 

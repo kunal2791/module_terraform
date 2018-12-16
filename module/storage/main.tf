@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "kjopsterraform" {
-  bucket = "kjops-terraform_bucket"
+  bucket = "kjopsterraformbucket"
   acl    = "private"
 
   tags {
