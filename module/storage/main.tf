@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "kjopsdemo" {
+resource "aws_s3_bucket" "kjopsterraform" {
   bucket = "test-bucket"
   acl    = "private"
 
