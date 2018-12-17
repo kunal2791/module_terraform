@@ -16,10 +16,10 @@ pipeline {
 			sh 'terraform plan'
     }
 		}
-		//stage ('terraform applying changes to infra') {
+		/**stage ('terraform applying changes to infra') {
       //steps {
-	//		sh 'terraform apply -input=false -auto-approve'
-    //}
-	//	}
+			//sh 'terraform apply -input=false -auto-approve'
+    }
+	*/}
 	}
 }
