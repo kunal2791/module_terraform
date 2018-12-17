@@ -1,6 +1,15 @@
 pipeline {
 	agent any
+  environment {
+    GIT_URL="https://github.com/kunal2791/module_terraform.git/"
+    SPECIFIER="master"
+  }
 	stages {
+    stage('Checkout') {
+    steps {
+        git branch: "${SPECIFIER}", url: "${GIT_URL}"
+    }
+    }
 		stage ('initilaze modules') {
       steps {
 			sh 'terraform init'
@@ -20,6 +29,6 @@ pipeline {
       //steps {
 			//sh 'terraform apply -input=false -auto-approve'
     //}
-    //}
+		//}
 	}
 }
