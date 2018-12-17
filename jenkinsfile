@@ -17,8 +17,8 @@ pipeline {
     }
 		}
 		/**stage ('terraform applying changes to infra') {
-      //steps {
-			//sh 'terraform apply -input=false -auto-approve'
+      steps {
+			sh 'terraform apply -input=false -auto-approve'
     }
 	*/}
 	}
