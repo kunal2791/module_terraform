@@ -34,8 +34,4 @@ pipeline {
     //}
 		//}
 	}
-	// Send notifications
-	if (buildStatus == 'FAILURE') {
-	    emailext attachLog: true, body: summary, compressLog: true, recipientProviders: [brokenTestsSuspects(), brokenBuildSuspects(), culprits()], replyTo: 'noreply@yourdomain.com', subject: subject, to: 'kunal2791@gmail.com'
-	}
 }
