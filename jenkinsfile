@@ -34,14 +34,15 @@ pipeline {
     //}
 		//}
 		stage("Wipe Out DIR") {
-
+        steps {
 				deleteDir()
 		}
-
+}
 		stage("Post Action") {
-
+        steps {
 				notifyBuild(currentBuild.result)
 		}
+	}
 	}
 }
 def notifyBuild(String buildStatus = 'STARTED') {
