@@ -2,8 +2,11 @@ pipeline {
 	agent any
   environment {
     GIT_URL="https://github.com/kunal2791/module_terraform.git/"
-    SPECIFIER="master"
-  }
+    //SPECIFIER="master"
+    }
+  parameters {
+    string(defaultValue: "develop", description: 'Branch Specifier', name: 'SPECIFIER')
+    }
 	stages {
     stage('Checkout') {
     steps {
