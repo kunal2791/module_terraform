@@ -10,7 +10,8 @@ pipeline {
 	stages {
     stage('Checkout') {
     steps {
-        git branch: "${SPECIFIER}", url: "${GIT_URL}"
+        //git branch: "${SPECIFIER}", url: "${GIT_URL}"
+	checkout scm
     }
     }
 		stage ('initilaze modules') {
