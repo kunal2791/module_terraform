@@ -26,8 +26,9 @@ pipeline {
 		}
 		stage ('terraform planning infra') {
       steps {
-			sh 'terraform plan'
-    }
+			//sh 'terraform plan'
+      sh 'terraform plan -out=storage.plan -target=module.storage'
+		}
 		}
 		//stage ('terraform applying changes to infra') {
       //steps {
